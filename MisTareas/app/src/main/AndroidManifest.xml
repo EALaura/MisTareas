@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.PopupInfo"
-            android:theme="@style/AppTheme.TemaPopup"></activity>
+        <activity
+            android:name=".Controller.PopAdd"
+            android:theme="@style/AppTheme.TemaPop"></activity>
+        <activity
+            android:name=".Controller.PopupInfo"
+            android:theme="@style/AppTheme.TemaPop" />
         <activity android:name=".Controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
