@@ -13,14 +13,16 @@ import com.example.mistareas.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
-
     private FloatingActionButton fav;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViews();
         implementsButton();
+
+        ConexionSQLiteHelper con = new ConexionSQLiteHelper(this, "bd_tareas", null, 1);
     }
 
     private void findViews(){
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "BUTTON Flot", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(MainActivity.this, PopAdd.class));
+                startActivity(new Intent(MainActivity.this, Activity_Agregar.class));
             }
         });
     }

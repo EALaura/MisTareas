@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Controller.PopAdd"
+            android:name=".Controller.Activity_Agregar"
             android:theme="@style/AppTheme.TemaPop"></activity>
         <activity
             android:name=".Controller.PopupInfo"

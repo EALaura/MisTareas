@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".Controller.PopAdd">
+    tools:context=".Controller.Activity_Agregar">
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,6 +31,7 @@
     </ScrollView>
 
     <Button
+        android:id="@+id/btnAceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
