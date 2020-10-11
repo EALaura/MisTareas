@@ -38,7 +38,7 @@ public class Activity_Agregar extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registrarTarea();
-                //startActivity(new Intent(Activity_Agregar.this, MainActivity.class));
+                startActivity(new Intent(Activity_Agregar.this, MainActivity.class));
             }
         });
     }
@@ -56,6 +56,8 @@ public class Activity_Agregar extends AppCompatActivity {
         Long idResultante = db.insert(Utilities.TABLA_TAREA, Utilities.CAMPO_ID, values);
 
         Toast.makeText(getApplicationContext(), "ID REGISTRO:"  + idResultante, Toast.LENGTH_SHORT).show();
+
+        db.close();
     }
 
     public void popAgregar(){

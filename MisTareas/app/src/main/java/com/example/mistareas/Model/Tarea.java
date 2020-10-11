@@ -5,6 +5,9 @@ public class Tarea {
     private String tarea;
     private Integer status;
 
+    public Tarea() {
+    }
+
     public Tarea(Integer id, String tarea, Integer status) {
         this.id = id;
         this.tarea = tarea;
