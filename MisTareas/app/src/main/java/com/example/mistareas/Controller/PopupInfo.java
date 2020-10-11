@@ -1,9 +1,11 @@
-package com.example.mistareas;
+package com.example.mistareas.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+
+import com.example.mistareas.R;
 
 public class PopupInfo extends AppCompatActivity {
 
