@@ -101,7 +101,7 @@ public class Completar_Tarea extends AppCompatActivity {
 
         if (objetoEnviado != null) {
             tarea = (Tarea) objetoEnviado.getSerializable("Tarea");
-            tareaView.setText(tarea.getTarea().toString() + tarea.getId());
+            tareaView.setText(tarea.getTarea().toString());
         }
     }
 
@@ -112,7 +112,7 @@ public class Completar_Tarea extends AppCompatActivity {
         int ancho = medidasVentanas.widthPixels;
         int alto = medidasVentanas.heightPixels;
 
-        getWindow().setLayout((int) (ancho * 0.85), (int) (alto * 0.5));
+        getWindow().setLayout((int) (ancho * 0.85), (int) (alto * 0.45));
     }
 
     @Override

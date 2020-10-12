@@ -67,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
             String estado;
             if (listaTareas.get(i).getStatus() == 0){
                 estado = "Sin Completar";
-                listaInformacion.add("\n"+  listaTareas.get(i).getTarea() +"\n\tEstado: " + estado + "\n");
+                listaInformacion.add("\n"+  listaTareas.get(i).getTarea() +"\n\n\tEstado: " + estado + "\n");
             }
 
         }
-        if (listaInformacion.size() == 0){
+        /*if (listaInformacion.size() == 0){
             listaInformacion.add("No tienes tareas Pendientes");
-        }
+        }*/
     }
 
     private void findViews() {

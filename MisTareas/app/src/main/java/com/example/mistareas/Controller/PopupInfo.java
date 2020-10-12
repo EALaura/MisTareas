@@ -20,7 +20,7 @@ public class PopupInfo extends AppCompatActivity {
         int ancho = medidasVentanas.widthPixels;
         int alto = medidasVentanas.heightPixels;
 
-        getWindow().setLayout((int)(ancho * 0.85),(int)(alto * 0.5));
+        getWindow().setLayout((int)(ancho * 0.70),(int)(alto * 0.40));
 
     }
 }
