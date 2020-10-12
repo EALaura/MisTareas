@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         listViewTareas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                
                 String info = "Tarea: " + listaTareas.get(position).getTarea();
                 info += "Estado: " + listaTareas.get(position).getStatus();
                 info += "\nID:" + listaTareas.get(position).getId();
