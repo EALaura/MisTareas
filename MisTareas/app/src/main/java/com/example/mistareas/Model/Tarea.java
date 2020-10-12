@@ -1,6 +1,8 @@
 package com.example.mistareas.Model;
 
-public class Tarea {
+import java.io.Serializable;
+
+public class Tarea implements Serializable {
     private Integer id;
     private String tarea;
     private Integer status;

@@ -63,9 +63,15 @@ public class MainActivity extends AppCompatActivity {
         listaInformacion = new ArrayList<String>();
 
         for (int i = 0; i < listaTareas.size(); i++) {
-            listaInformacion.add(listaTareas.get(i).getId() +
-                    " - " + listaTareas.get(i).getTarea() +
-                    " - " + listaTareas.get(i).getStatus());
+            String estado;
+            if (listaTareas.get(i).getStatus() == 0){
+                estado = "Sin Completar";
+            }
+            else {
+                estado = "Completado";
+            }
+
+            listaInformacion.add(listaTareas.get(i).getTarea() +"\n\tEstado: " + estado);
         }
     }
 
@@ -90,6 +96,16 @@ public class MainActivity extends AppCompatActivity {
                 info += "Estado: " + listaTareas.get(position).getStatus();
                 info += "\nID:" + listaTareas.get(position).getId();
                 Toast.makeText(getApplicationContext(), info, Toast.LENGTH_SHORT).show();
+
+                //Mandar Datos a otro activity
+                Tarea tareaE = listaTareas.get(position);
+                Intent intent = new Intent(MainActivity.this, Completar_Tarea.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Tarea", tareaE);
+
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }
