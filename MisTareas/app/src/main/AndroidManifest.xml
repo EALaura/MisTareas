@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Controller.Activity_Historial"></activity>
         <activity
             android:name=".Controller.Completar_Tarea"
-            android:theme="@style/AppTheme.TemaPop"></activity>
+            android:theme="@style/AppTheme.TemaPop" />
         <activity
             android:name=".Controller.Activity_Agregar"
             android:theme="@style/AppTheme.TemaPop" />

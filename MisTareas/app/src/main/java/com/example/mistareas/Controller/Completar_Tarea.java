@@ -47,9 +47,11 @@ public class Completar_Tarea extends AppCompatActivity {
         btnSi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editarStatus();
+                //editarStatus();
+                borrarTarea();
                 Toast.makeText(getApplicationContext(), "Terminaste una tarea", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Completar_Tarea.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -57,6 +59,7 @@ public class Completar_Tarea extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Completar_Tarea.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -67,6 +70,7 @@ public class Completar_Tarea extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "Se borro la tarea", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Completar_Tarea.this, MainActivity.class));
+                finish();
 
             }
         });
@@ -109,5 +113,11 @@ public class Completar_Tarea extends AppCompatActivity {
         int alto = medidasVentanas.heightPixels;
 
         getWindow().setLayout((int) (ancho * 0.85), (int) (alto * 0.5));
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 }

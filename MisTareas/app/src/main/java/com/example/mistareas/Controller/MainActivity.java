@@ -67,11 +67,9 @@ public class MainActivity extends AppCompatActivity {
             String estado;
             if (listaTareas.get(i).getStatus() == 0){
                 estado = "Sin Completar";
+                listaInformacion.add("\n"+  listaTareas.get(i).getTarea() +"\n\tEstado: " + estado + "\n");
             }
-            else {
-                estado = "Completado";
-            }
-            listaInformacion.add("\n"+  listaTareas.get(i).getTarea() +"\n\tEstado: " + estado + "\n");
+
         }
     }
 
@@ -119,10 +117,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem option_menu) {
         int id = option_menu.getItemId();
-        if (id == R.id.configuracion) {
+        /*if (id == R.id.configuracion) {
             //Toast.makeText(this, "Configuracion", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, Activity_Historial.class));
+            finish();
             return true;
-        }
+
+        }*/
         if (id == R.id.info) {
             //Toast.makeText(this, "INFO", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, PopupInfo.class));
@@ -136,5 +137,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         consultarTareas();
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
