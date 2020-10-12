@@ -50,13 +50,14 @@ public class MainActivity extends AppCompatActivity {
         while (cursor.moveToNext()) {
             tarea = new Tarea();
 
-            tarea.setId(cursor.getPosition());
+            tarea.setId(cursor.getInt(0));
             tarea.setTarea(cursor.getString(1));
             tarea.setStatus(cursor.getInt(2));
 
             listaTareas.add(tarea);
         }
         obtenerLista();
+        db.close();
     }
 
     private void obtenerLista() {
@@ -70,8 +71,7 @@ public class MainActivity extends AppCompatActivity {
             else {
                 estado = "Completado";
             }
-
-            listaInformacion.add(listaTareas.get(i).getTarea() +"\n\tEstado: " + estado);
+            listaInformacion.add("\n"+  listaTareas.get(i).getTarea() +"\n\tEstado: " + estado + "\n");
         }
     }
 
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 String info = "Tarea: " + listaTareas.get(position).getTarea();
                 info += "Estado: " + listaTareas.get(position).getStatus();
                 info += "\nID:" + listaTareas.get(position).getId();
-                Toast.makeText(getApplicationContext(), info, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), info, Toast.LENGTH_SHORT).show();
 
                 //Mandar Datos a otro activity
                 Tarea tareaE = listaTareas.get(position);
@@ -120,11 +120,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem option_menu) {
         int id = option_menu.getItemId();
         if (id == R.id.configuracion) {
-            Toast.makeText(this, "Configuracion", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Configuracion", Toast.LENGTH_SHORT).show();
             return true;
         }
         if (id == R.id.info) {
-            Toast.makeText(this, "INFO", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "INFO", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, PopupInfo.class));
             return true;
         }

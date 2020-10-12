@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.example.mistareas.R;
 import com.example.mistareas.Utilities.Utilities;
 
+import java.util.Random;
+
 public class Activity_Agregar extends AppCompatActivity {
     public TextView campoTarea;
     public Button btnAceptar;
@@ -49,14 +51,13 @@ public class Activity_Agregar extends AppCompatActivity {
 
         SQLiteDatabase db = con.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(Utilities.CAMPO_ID, "1");
+        values.put(Utilities.CAMPO_ID, ""+((int) (Math.random()*(100000-1+1)+100000)));
         values.put(Utilities.CAMPO_TAREA, campoTarea.getText().toString());
         values.put(Utilities.CAMPO_STATUS, "0");
 
         Long idResultante = db.insert(Utilities.TABLA_TAREA, Utilities.CAMPO_ID, values);
 
         Toast.makeText(getApplicationContext(), "ID REGISTRO:"  + idResultante, Toast.LENGTH_SHORT).show();
-
         db.close();
     }
 
