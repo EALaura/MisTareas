@@ -3,4 +3,6 @@
 
     <string name="Desarrollador">Erick Andy Laura Barrios</string>
     <string name="Fecha">Octubre 2020</string>
+    <string name="appwidget_text">Mis Tareas</string>
+    <string name="add_widget">Add widget</string>
 </resources>

@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+        if (listaInformacion.size() == 0){
+            listaInformacion.add("No tienes tareas Pendientes");
+        }
     }
 
     private void findViews() {
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "BUTTON Flot", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "BUTTON Flot", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this, Activity_Agregar.class));
             }
         });

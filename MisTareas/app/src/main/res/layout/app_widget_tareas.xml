@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#09C"
+    android:padding="@dimen/widget_margin">
+    <TextView
+        android:text="Mis Tareas"
+        android:id="@+id/tareasViewsWid"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="#ffffff"
+        android:background="#09C"
+        android:layout_height="wrap_content"/>
+
+    <ListView
+        android:layout_marginTop="30dp"
+        android:id="@+id/appwidget_tareas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+
+         />
+
+</RelativeLayout>

@@ -39,8 +39,13 @@ public class Activity_Agregar extends AppCompatActivity {
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrarTarea();
-                startActivity(new Intent(Activity_Agregar.this, MainActivity.class));
+                if(campoTarea.getText().length() > 1) {
+                    registrarTarea();
+                    startActivity(new Intent(Activity_Agregar.this, MainActivity.class));
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Agregue su tarea", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -57,7 +62,7 @@ public class Activity_Agregar extends AppCompatActivity {
 
         Long idResultante = db.insert(Utilities.TABLA_TAREA, Utilities.CAMPO_ID, values);
 
-        Toast.makeText(getApplicationContext(), "ID REGISTRO:"  + idResultante, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "ID REGISTRO:"  + idResultante, Toast.LENGTH_SHORT).show();
         db.close();
     }
 
